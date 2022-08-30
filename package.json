@@ -5,18 +5,19 @@
     "samuelbagattin.com": "bin/samuelbagattin.com.js"
   },
   "scripts": {
-    "build": "tsc",
-    "watch": "tsc -w",
-    "test": "jest",
-    "cdk": "cdk"
+    "login": "aws sso login --profile samuel",
+    "deploy": "AWS_PROFILE=samuel AWS_REGION=eu-west-1 npx cdk deploy --all"
   },
   "devDependencies": {
     "@types/jest": "^27.5.2",
     "@types/node": "10.17.27",
     "@types/prettier": "2.6.0",
+    "aws-cdk": "2.39.0",
+    "@aws-sdk/client-acm": "~3.131.0",
+    "@aws-sdk/client-route-53": "~3.131.0",
+    "@aws-sdk/client-sts": "~3.131.0",
     "jest": "^27.5.1",
     "ts-jest": "^27.1.4",
-    "aws-cdk": "2.39.0",
     "ts-node": "^10.9.1",
     "typescript": "~3.9.7"
   },
